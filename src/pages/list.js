@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class Home extends Component { 
+class List extends Component { 
     render() {
         return (
             <div>
-                Home
+                List
             </div>
         )
     }
@@ -12,4 +12,4 @@ class Home extends Component {
 
 }
 
-export default Home
+export default List

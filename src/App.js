@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, HashRouter, Redirect, Switch, withRouter, Link } from 'react-router-dom';
+import Home from './pages/Home'
+import List from './pages/list'
+import Details from './pages/details'
+import Mine from './pages/mine'
+import Order from './pages/order'
+import Reg from './pages/reg'
+import Login from './pages/login'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      App
+      <HashRouter>
+        <Switch>
+          <Route path='/home' component={Home} exact />
+          <Route path="/login" component={Login} />
+          <Route path="/reg" component={Reg} />
+          <Route path="/mine" component={Mine} />
+          <Route path="/list" component={List} />
+          <Route path="/details/:id" component={Details} />
+          <Route path="/order" component={Order} />
+          <Route path="/notfound" component={() => <div>404</div>} />
+          <Redirect from="/" to="/home" exact />
+          <Redirect to="/notfound" />
+        </Switch>
+      </HashRouter>
     </div>
+
+
   );
 }
 
