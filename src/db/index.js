@@ -1,71 +1,84 @@
-const MongoClient = require('mongodb').MongoClient;
+const express = require('express');
 
-// Connection URL
-const url = 'mongodb://localhost:27017';
+// 使用express中间件Router来实现server与router的连接
+const Router = express.Router()
 
-// Database Name
-const dbName = 'khly';
+const db = require('../db')
 
-function connect() {
-    return new Promise((resolve, reject) => {
-        // Use connect method to connect to the server
-        MongoClient.connect(url, function (err, client) {
-            console.log("Connected successfully to server");
+// 查询所有商品 /goods/
+Router.get('/', async (req, res) => {
+    const { page = 1, size = 15, sort = { product_id: 1 } } = req.query;
+    const limit = size * 1;
+    const skip = (page - 1) * size;
 
-            db = client.db(dbName);
+    let result
+    let data;
+    try {
+        result = await db.find('list', {}, { limit, skip, sort })
+        data = {
+            code: 1,
+            data: result,
+            msg: 'success',
 
-            resolve({ db, client })
-            //   client.close();
-        });
-
-    })
-
-}
-
-
-// 增
-async function create(colName,data) {
-    // 连接数据库
-    const {db,client} = await connect();
-
-    const collection = db.collection(colName);
-
-    if(!Array.isArray(data)){
-        data = [data];
+        }
+    } catch (err) {
+        console.log(error);
+        data = {
+            code: 0,
+            data: [],
+            msg: 'fail'
+        }
     }
-
-    await collection.insertMany(data);
-
-    client.close()
-}
+    // 请求<->响应
+    res.send(data)
 
 
-// 删
-function remove() {
+})
+Router.post('/', (req, res) => { //增
+    // db.create('goods')
+})
 
-}
+// 获取库存数量
+Router.get('/kucun', (req, res) => {
+    res.send({
+        code: 1,
+        data: 4,
+        msg: 'success'
+    })
+})
 
-// 改
-function update() {
+// 查询id为某个值的商品
+Router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+    if (id === "all-e0") {
+        move = {}
+    } else if (id === "all-e1") {
+        move = {productTypeName : "跟团游"}
+    } else if (id === "all-e2") {
+        move = {productTypeName : "自由行"}
+    } else if (id === "all-e3") {
+        mobe = {destinationSingleCity : "广州"}
+    } else {
+        move = { _id: id }
+    }
+    const result = await db.find('list', move);
+    if (result.length > 0) {
+        res.send({
+            code: 1,
+            data: result,
+            msg: 'success',
+            name: req.params
+        })
+    } else {
+        res.send({
+            code: 0,
+            data: [],
+            msg: 'fail',
+            name: req.params
+        })
+    }
+})
 
-}
 
+module.exports = Router
 
-// 查
-async function find(colName,query) {
-    const {db,client} = await connect();
-
-    const collection = db.collection(colName);
-
-    const result = collection.find(query);
-
-    return result.toArray();
-}
-
-
-module.exports = {
-    create,
-    remove,
-    update,
-    find
-}

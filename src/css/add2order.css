@@ -1,0 +1,104 @@
+.order-info{
+    width: 6.9rem;
+    height: 2.18rem;
+    padding: 0.28rem 0.3rem;
+    background: #fff;
+    margin-top: 0.88rem;
+}
+.name{
+    font-size: 0.32rem;
+    font-weight: 400;
+}
+.basic-info{
+    font-size: 0.28rem;
+}
+.basic-item{
+    margin-top: 0.14rem;
+    height: 0.4rem;
+}
+.basic-item span{
+    line-height: 0.52rem;
+}
+.basic-item .right{
+    padding-left: 0.32rem;
+}
+.passenger-info{
+    width: 7.5rem;
+    height: 3.7rem;
+    margin: 0.2rem 0;
+    background: #fff;
+}
+.passenger-info-head{
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-weight: 700;
+    font-size: 0.28rem;
+    line-height: 0.9rem;
+    padding-left: 0.3rem;
+}
+.not-empty{
+    color: red;
+}
+.passenger-info-item{
+    height: 0.92rem;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+.item-left{
+    position: absolute;
+    color: #666;
+    font-size: 0.28rem;
+    padding-left: 0.3rem;
+    line-height: 0.9rem;
+    display: inline-block;
+    width: 1.5rem;
+}
+.passenger-info-item input{
+    position: absolute;
+    left: 2rem;
+    top: 0.3rem;
+    outline: 0;
+    border: none;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+.booking-notice{
+    width: 6.9rem;
+    height: 0.36rem;
+    padding: 0.18rem 0.3rem 0.36rem;
+    color: #666;
+    font-size: 0.28rem;
+}
+.check-area {
+    display: inline-block;
+    
+}
+#booking_notice{
+    color: #01AF63;
+}
+.submitOrder-warp{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 0.88rem;
+    background: #fff;
+}
+.j_feeDetails{
+    position: absolute;
+    top: 0.2rem;
+    
+    width: 4.22rem;
+    font-size: 0.28rem;
+    text-align: center;
+
+}
+.j_makeOrder{
+    position: absolute;
+    right: 0;
+    width: 3.28rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    background-color: #ff811a;
+    text-align: center;
+    font-size: 0.32rem;
+    color: #Fff;
+}

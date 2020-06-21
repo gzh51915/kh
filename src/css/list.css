@@ -31,7 +31,7 @@ header .title h1:before {
     overflow: hidden;
 }
 
-.product{
+.products{
     width: 6.9rem;
     height: 1.8rem;
     padding: 0.3rem;
@@ -99,4 +99,33 @@ header .title h1:before {
     font-size: 0.36rem;
     color: #ff811a;;
     font-weight: 500;
+}
+.nav-item{
+    color: #fff;
+    font-size: 0.24rem;
+    text-align: center;
+    padding: 0.12rem 0.3rem;
+}
+.scroll-wrap{
+    font-size: 0.28rem;
+    line-height: 0.86rem;
+    
+
+}
+.filter-item{
+    border-bottom: solid 1px #e5e5e5;
+    margin: 0 0.3rem;
+    color: #666;
+}
+.scroll-wrap{
+    width: 6.9rem;
+    
+}
+
+.car{
+    color: #01af63;
+}
+.scroll-cho{
+    color: #666;
+    padding-left: 0.3rem;
 }
