@@ -25,6 +25,9 @@ class Details extends Component {
     //     console.log(data);
 
     // }
+    goBack() {
+        window.history.go(-1); 
+    }
     async componentDidMount() {
         const { id } = this.props.match.params
         // ajax()
@@ -44,7 +47,7 @@ class Details extends Component {
             <div>
                 <header style={{ position: "fixed", width: "100%", height: "0.88rem", top: 0, zIndex: 999 }}>
                     <div style={{ textAlign: "center", width: "100%", height: "0.88rem", backgroundColor: "#fff" }}>
-                        <LeftOutlined style={{ padding: "0.26rem 0.28rem", fontSize: "18px", color: "#01af63", float: "left" }} />
+                        <LeftOutlined style={{ padding: "0.26rem 0.28rem", fontSize: "18px", color: "#01af63", float: "left" }} onClick={this.goBack}/>
                         <div className="title etc" style={{ display: "inline", width: "2.16rem", height: "0.88rem", }}>
                             <h1 style={{ display: "inline-block", color: "#606060", fontSize: "0.36rem", fontWeight: "400", lineHeight: "0.88rem", position: "absolute", left: "2.68rem" }}>
                                 康辉旅游
@@ -55,7 +58,7 @@ class Details extends Component {
                 </header>
                 <section className="pro-detail">
                     <div className="pro-banner">
-                        <img src={data.image}></img>
+                        <img src={data.image} alt=""></img>
                         <div className="type-content">
                             <span className="type">{data.productTypeName}</span>
                             <span className="pro-id">编号:{data.product_id}</span>

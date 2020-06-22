@@ -162,9 +162,10 @@ body{
 }
 .j_refund{
     width: 6.9rem;
-    height: 7.88rem;
+    height: 7.8rem;
     background: #fff;
     padding: 0.3rem;
+    margin-bottom: 1rem;
 }
 .detail-content{
     color: #666;

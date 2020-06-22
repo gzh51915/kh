@@ -35,7 +35,7 @@ export default class List extends Component {
 
     }
     show(i) {
-        console.log(i);
+
         document.getElementsByClassName("shade")[0].style.display = "block"
         document.getElementsByClassName("scroll-wrap")[i].style.display = "block"
     }
@@ -65,8 +65,9 @@ export default class List extends Component {
             e.target.parentNode.childNodes[i].className = "filter-item"
         }
         e.target.className = "filter-item car"
+        var arr = []
         const { data } = this.state
-        if (e.target.dataset.paixu == 0) {
+        if (e.target.dataset.paixu === "0") {
             function compare(property) {
                 return function (a, b) {
                     var value1 = a[property];
@@ -74,8 +75,8 @@ export default class List extends Component {
                     return value1 - value2;
                 }
             }
-            var arr = data.sort(compare("product_id"));
-        } else if (e.target.dataset.paixu == 1) {
+             arr = data.sort(compare("product_id"));
+        } else if (e.target.dataset.paixu === "1") {
             function compare(property) {
                 return function (a, b) {
                     var value1 = a[property];
@@ -83,7 +84,7 @@ export default class List extends Component {
                     return value1 - value2;
                 }
 
-            } var arr = data.sort(compare("salePrice"));
+            }  arr = data.sort(compare("salePrice"));
         } else {
             function compare(property) {
                 return function (a, b) {
@@ -92,23 +93,24 @@ export default class List extends Component {
                     return value2 - value1;
                 }
 
-            } var arr = data.sort(compare("salePrice"));
+            }  arr = data.sort(compare("salePrice"));
         }
 
         this.setState({
             data: arr
         })
         console.log()
-
-
+    }
+    goBack() {
+        window.history.go(-1); 
     }
     render() {
-        const { data, nav, feature, city, date, foote } = this.state
+        const { data, nav, feature, city, date } = this.state
         return (
             <div style={{ backgroundColor: "#f2f2f2" }}>
                 <header style={{ position: "fixed", width: "100%", height: "0.88rem", top: 0, zIndex: 999 }}>
                     <div style={{ textAlign: "center", width: "100%", height: "0.88rem", backgroundColor: "#fff" }}>
-                        <LeftOutlined style={{ padding: "0.26rem 0.28rem", fontSize: "18px", color: "#01af63", float: "left" }} />
+                        <LeftOutlined style={{ padding: "0.26rem 0.28rem", fontSize: "18px", color: "#01af63", float: "left" }} onClick={this.goBack}/>
                         <div className="title etc" style={{ display: "inline", width: "2.16rem", height: "0.88rem", }}>
                             <h1 style={{ display: "inline-block", color: "#606060", fontSize: "0.36rem", fontWeight: "400", lineHeight: "0.88rem", position: "absolute", left: "2.68rem" }}>
                                 康辉旅游
@@ -134,7 +136,7 @@ export default class List extends Component {
                                 <div className="products" key={idx} onClick={this.todetails.bind(this, item._id)}>
                                     {/* <Link to={{ pathname: '/details/', state: { item } }}> */}
                                     <div className="pro-img">
-                                        <img src={item.image}></img>
+                                        <img src={item.image} alt=""></img>
                                         <span>{item.productTypeName}</span>
                                     </div>
                                     <div className="product-info">
@@ -162,7 +164,7 @@ export default class List extends Component {
                         <ul>
                             {
                                 feature.map((item, idx) => (
-                                    <li className={idx === 0 ? "filter-item car" : "filter-item"} key={idx} onClick={this.addGreen}>{item}</li>
+                                    <a className={idx === 0 ? "filter-item car" : "filter-item"} key={idx} onClick={this.addGreen} href="/details/:id">{item}</a>
                                 ))
                             }
                         </ul>
@@ -199,9 +201,9 @@ export default class List extends Component {
                     </div>
                     <div className="scroll-wrap" style={{ display: "none", position: "absolute", bottom: "0", width: "100%", height: "6.2rem", background: "#fff" }}>
                         <ul>
-                            <li className="filter-item car" onClick={this.addGreen} onClick={this.sort.bind(this)} data-paixu="0">综合排序</li>
-                            <li className="filter-item" onClick={this.addGreen} onClick={this.sort.bind(this)} data-paixu="1">价格从低到高</li>
-                            <li className="filter-item" onClick={this.addGreen} onClick={this.sort.bind(this)} data-paixu="2">价格从高到低</li>
+                            <li className="filter-item car"  onClick={this.sort.bind(this)} data-paixu="0">综合排序</li>
+                            <li className="filter-item"  onClick={this.sort.bind(this)} data-paixu="1">价格从低到高</li>
+                            <li className="filter-item"  onClick={this.sort.bind(this)} data-paixu="2">价格从高到低</li>
                         </ul>
                     </div>
                 </div>
