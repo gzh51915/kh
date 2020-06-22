@@ -1,0 +1,200 @@
+body{
+    background-color: #f2f2f2;
+}
+.pro-detail{
+    margin-top: 0.88rem;
+    background: #fff;
+}
+.pro-banner{
+    width: 7.5rem;
+    height: 4.2rem;
+    position: relative;
+}
+.pro-banner img{
+    width: 7.5rem;
+    height: 4.2rem;
+}
+.type-content{
+    position: absolute;
+    bottom: 0;
+    font-size: 0.24rem;
+    color: #fff;
+    width: 6.9rem;
+    height: 0.6rem;
+    padding: 0.16rem 0.3rem 0;
+}
+.type{
+    float: left;
+}
+.pro-id{
+    float: right;
+}
+.pro-title{
+    width: 100%;
+    height: 0.98rem;
+}
+.title{
+    width: 6.9rem;
+    height: 0.4rem;
+    font-size: 0.32rem;
+    padding: 0.3rem;
+}
+.bor-sgbr {
+    width: 6.9rem;
+    height: 0.48rem;
+    padding: 0.18rem 0.3rem;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+.sale-price{
+    font-size: 0.32rem;
+    color: #ff811a;
+    position: absolute;
+}
+.sale-price span{
+    font-size: 0.46rem;
+}
+
+.market-price{
+    font-size: 0.24rem;
+    color: #ccc;
+    position: absolute;
+    bottom: 0.1rem;
+    left: 1.88rem;
+}
+.secSure{
+    width: 6.9rem;
+    height: 0.7rem;
+    color: #666;
+    font-size: 0.28rem;
+    padding: 0.2rem 0.3rem;
+}
+.tour-day{
+    width: 6.9rem;
+    height: 0.88rem;
+    background: #fff;
+    padding: 0.24rem 0.3rem;
+    font-size: 0.28rem;
+    margin: 0.2rem 0;
+    position: relative;
+}
+.tit{
+    line-height: 0.44rem;
+}
+.nav-wrap{
+    width: 100%;
+    height: 0.88rem;
+    font-size: 0.32rem;
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+
+}
+.nav-container{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.nav-item2{
+    display: inline-block;
+    color: #333;
+    padding: 0 0.24rem;
+    line-height: 0.88rem;
+    
+}
+.product-detail{
+    width: 6.9rem;
+    height: 2.64rem;
+    padding: 0.3rem;
+    background: #fff;
+}
+.point{
+    color: #333;
+    font-size: 0.28rem;
+    line-height: 0.44rem;
+}
+.j_intro{
+    width: 6.9rem;
+    height: 13.78rem;
+    background: #fff;
+    margin: 0.2rem 0;
+    padding:  0.3rem;
+    text-align: center;
+}
+.j_intro h3{
+    font-size: 0.36rem;
+    font-weight: 600;
+}
+.j_intro p{
+    font-size: 0.28rem;
+}
+.j_fee{
+    width: 6.9rem;
+    height: 7.06rem;
+    background: #fff;
+    padding: 0.3rem;
+    
+}
+.detail-head {
+    font-weight: 700;
+    font-size: 0.36rem;
+    text-align: center;
+    line-height: 0.6rem;
+    padding-bottom: 0.2rem;
+}
+.content-title{
+    color: #333;
+    font-size: 0.28rem;
+    line-height: 0.48rem;
+
+}
+.content {
+    color: #666;
+    font-size: 0.28rem;
+    line-height: 0.46rem;
+}
+.j_notice{
+    width: 6.9rem;
+    height: 39.04rem;
+    background: #fff;
+    padding: 0.3rem;
+    margin: 0.2rem 0;
+}
+.j_refund{
+    width: 6.9rem;
+    height: 7.8rem;
+    background: #fff;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+}
+.detail-content{
+    color: #666;
+    font-size: 0.28rem;
+    line-height: 0.4rem;
+}
+.detail-bottom{
+    width: 100%;
+    height: 0.88rem;
+    position: fixed;
+    bottom: 0;
+    font-size: 0.28rem;
+}
+.detail-bottom-btn {
+display: inline-block;
+text-align: center;
+width:  1.8rem;
+height: 0.88rem;
+background: #fff;
+}
+.noworder{
+    display: inline-block;
+    line-height: 0.88rem;
+    width: 3.9rem;
+    height: 0.88rem;
+    text-align: center;
+    background-color: #ff811a;
+    position: absolute;
+    right: 0;
+    font-size: 0.32rem;
+    color: #fff;
+}
